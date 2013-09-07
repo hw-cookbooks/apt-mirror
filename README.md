@@ -7,25 +7,12 @@ mirrored repository of one or more apt repositories.
 Requirements
 ------------
 
-#### packages
-
 Attributes
 ----------
-TODO: List you cookbook attributes here.
 
 Usage
 -----
 Include `recipe[apt-mirror]` in the run_list.
-
-
-```json
-{
-  "name":"my_node",
-  "run_list": [
-    "recipe[apt-mirror]"
-  ]
-}
-```
 
 Contributing
 ------------
