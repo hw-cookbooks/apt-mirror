@@ -1,0 +1,13 @@
+apt-mirror CHANGELOG
+====================
+
+This file is used to list changes made in each version of the apt-mirror cookbook.
+
+0.1.0
+-----
+- [Aaron Baer] - Initial release of apt-mirror
+
+- - -
+Check the [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax) for help with Markdown.
+
+The [Github Flavored Markdown page](http://github.github.com/github-flavored-markdown/) describes the differences between markdown on github and standard markdown.
