@@ -46,7 +46,7 @@ if node['apt-mirror']['cron']['active']
     hour    node['apt-mirror']['cron']['hour']
     day     node['apt-mirror']['cron']['day']
     weekday node['apt-mirror']['cron']['weekday']
-    command "apt-mirror"
+    command "/usr/bin/apt-mirror > /var/spool/apt-mirror/var/cron.log"
     action  :create
   end
 else
