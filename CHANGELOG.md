@@ -3,6 +3,9 @@ apt-mirror CHANGELOG
 
 This file is used to list changes made in each version of the apt-mirror cookbook.
 
+0.1.1
+-----
+- [Aaron Baer] - Configures apt-mirror and makes it possible to schedule updates
 0.1.0
 -----
 - [Aaron Baer] - Initial release of apt-mirror

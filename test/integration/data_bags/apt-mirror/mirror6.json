@@ -1,0 +1,4 @@
+{
+  "id": "mirror6",
+  "source": "deb  http://ppa.launchpad.net/rwky/redis/ubuntu precise main"
+}

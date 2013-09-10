@@ -20,3 +20,37 @@
 package "apt-mirror" do
   action :install
 end
+
+repository_locations = data_bag('apt-mirror').map do |mirror|
+  data_bag_item('apt-mirror', mirror)["source"]
+end
+
+template '/etc/apt/mirror.list' do
+  source 'mirror.erb'
+  mode    '0644'
+  owner   'root'
+  group   'root'
+  variables(
+    :base_path => node['apt-mirror']['base_path'],
+    :defaultarch => node['apt-mirror']['defaultarch'],
+    :run_postmirror => node['apt-mirror']['run_postmirror'],
+    :nthreads => node['apt-mirror']['nthreads'],
+    :_tilde => node['apt-mirror']['_tilde'],
+    :repository_locations => repository_locations
+  )
+end
+
+if node['apt-mirror']['cron']['active']
+  cron "update_repository_mirrors" do
+    minute  node['apt-mirror']['cron']['minute']
+    hour    node['apt-mirror']['cron']['hour']
+    day     node['apt-mirror']['cron']['day']
+    weekday node['apt-mirror']['cron']['weekday']
+    command "/usr/bin/apt-mirror > /var/spool/apt-mirror/var/cron.log"
+    action  :create
+  end
+else
+  cron "update_repository_mirrors" do
+    action  :delete
+  end
+end

@@ -1,0 +1,11 @@
+{
+  "sha": "ddb3d204f7dfb9cebae0ada7d993e7d22f2cb40a",
+  "sources": {
+    "apt-mirror": {
+      "path": "."
+    },
+    "apt": {
+      "locked_version": "2.1.1"
+    }
+  }
+}

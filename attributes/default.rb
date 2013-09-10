@@ -1,0 +1,10 @@
+default['apt-mirror']['base_path']          = '/var/spool/apt-mirror'
+default['apt-mirror']['defaultarch']        = 'amd64'
+default['apt-mirror']['run_postmirror']     = 0
+default['apt-mirror']['nthreads']           = 20
+default['apt-mirror']['_tilde']             = 0
+default['apt-mirror']['cron']['active']     = false
+default['apt-mirror']['cron']['minute']     = 0
+default['apt-mirror']['cron']['hour']       = 5
+default['apt-mirror']['cron']['day']        = '*'
+default['apt-mirror']['cron']['weekday']    = '*'
