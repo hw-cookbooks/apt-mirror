@@ -1,4 +1,5 @@
 {
   "id": "mirror1",
-  "source": "deb  http://ppa.launchpad.net/ubuntu-clamav/ppa/ubuntu precise main"
+  "source": "deb  http://ppa.launchpad.net/ubuntu-clamav/ppa/ubuntu precise main",
+  "fqdn": "ppa.launchpad.net"
 }

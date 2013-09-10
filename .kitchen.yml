@@ -8,6 +8,7 @@ platforms:
   driver_config:
     box: opscode-ubuntu-12.04
     box_url: https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_ubuntu-12.04_provisionerless.box
+  run_list: ["recipe[apt]"]
 #- name: ubuntu-10.04
 #  driver_config:
 #    box: opscode-ubuntu-10.04
@@ -15,6 +16,6 @@ platforms:
 
 suites:
 - name: default
-  run_list: ["recipe[apt-mirror]"]
+  run_list: ["recipe[apt-mirror]","recipe[apt-mirror::nginx]"]
   attributes: {}
   data_bags_path: "data_bags"
