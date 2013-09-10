@@ -1,0 +1,36 @@
+# This file is managed by Chef.
+# Do NOT modify this file directly.
+############# config ##################
+#
+set base_path     <%= @base_path %>
+#
+set mirror_path   $base_path/mirror
+set skel_path     $base_path/skel
+set var_path      $base_path/var
+# set cleanscript $var_path/clean.sh
+set defaultarch   <%= @defaultarch %>
+# set postmirror_script $var_path/postmirror.sh
+set run_postmirror <%= @run_postmirror %>
+set nthreads      <%= @nthreads %>
+set _tilde        <%= @_tilde %>
+#
+############# end config ##############
+
+deb http://archive.ubuntu.com/ubuntu lucid main restricted universe multiverse
+deb http://archive.ubuntu.com/ubuntu lucid-security main restricted universe multiverse
+deb http://archive.ubuntu.com/ubuntu lucid-updates main restricted universe multiverse
+#deb http://archive.ubuntu.com/ubuntu lucid-proposed main restricted universe multiverse
+#deb http://archive.ubuntu.com/ubuntu lucid-backports main restricted universe multiverse
+
+deb-src http://archive.ubuntu.com/ubuntu lucid main restricted universe multiverse
+deb-src http://archive.ubuntu.com/ubuntu lucid-security main restricted universe multiverse
+deb-src http://archive.ubuntu.com/ubuntu lucid-updates main restricted universe multiverse
+#deb-src http://archive.ubuntu.com/ubuntu lucid-proposed main restricted universe multiverse
+#deb-src http://archive.ubuntu.com/ubuntu lucid-backports main restricted universe multiverse
+
+# custom repositories to mirror
+<% @repository_locations.each do |repo| -%>
+<%= repo %>
+<% end -%>
+
+clean http://archive.ubuntu.com/ubuntu

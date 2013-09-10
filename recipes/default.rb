@@ -20,3 +20,22 @@
 package "apt-mirror" do
   action :install
 end
+
+repository_locations = data_bag('apt-mirror').map do |mirror|
+  data_bag_item('apt-mirror', mirror)["source"]
+end
+
+template '/etc/apt/mirror.list' do
+  source 'mirror.erb'
+  mode    '0644'
+  owner   'root'
+  group   'root'
+  variables(
+    :base_path => node['apt-mirror']['base_path'],
+    :defaultarch => node['apt-mirror']['defaultarch'],
+    :run_postmirror => node['apt-mirror']['run_postmirror'],
+    :nthreads => node['apt-mirror']['nthreads'],
+    :_tilde => node['apt-mirror']['_tilde'],
+    :repository_locations => repository_locations
+  )
+end
