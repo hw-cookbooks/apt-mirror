@@ -21,6 +21,13 @@ package "apt-mirror" do
   action :install
 end
 
+directory node['apt-mirror']['base_path'] do
+  owner "root"
+  group "root"
+  mode  0755
+  recursive true
+end
+
 repository_locations = data_bag('apt-mirror').map do |mirror|
   data_bag_item('apt-mirror', mirror)["source"]
 end

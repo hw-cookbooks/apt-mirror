@@ -13,7 +13,8 @@ Requirements
 ```json
 {
   "id": "sensu",
-  "source": "deb  http://repos.sensuapp.org/apt sensu main"
+  "source": "deb  http://repos.sensuapp.org/apt sensu main",
+  "fqdn": "repos.sensuapp.org"
 }
 ```
 
@@ -30,10 +31,12 @@ Attributes
 *  node['apt-mirror']['cron']['hour'] - Hour
 *  node['apt-mirror']['cron']['day'] - Day.
 *  node['apt-mirror']['cron']['weekday'] - Weekday. Default is everyday.
+*  node['apt-mirror']['nginx']['port'] - Set port for nginx to run.
 
 Usage
 -----
 Include `recipe[apt-mirror]` in the run_list.
+Include `recipe[apt-mirror::nginx]` in the run_list to include a web server front end.
 
 Repository
 ----------
