@@ -39,3 +39,18 @@ template '/etc/apt/mirror.list' do
     :repository_locations => repository_locations
   )
 end
+
+if node['apt-mirror']['cron']['active']
+  cron "update_repository_mirrors" do
+    minute  node['apt-mirror']['cron']['minute']
+    hour    node['apt-mirror']['cron']['hour']
+    day     node['apt-mirror']['cron']['day']
+    weekday node['apt-mirror']['cron']['weekday']
+    command "apt-mirror"
+    action  :create
+  end
+else
+  cron "update_repository_mirrors" do
+    action  :delete
+  end
+end
