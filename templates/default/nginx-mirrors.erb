@@ -9,13 +9,13 @@ server {
   access_log /var/log/nginx/mirror-access.log;
 
   location /ubuntu {
-    root <%= @mirror_path %>archive.ubuntu.com;
+    alias <%= @mirror_path %>archive.ubuntu.com;
     autoindex on;
   }
 
-<% @repository_information.each do |location, location_root| -%>
+<% @repository_information.each do |location, location_alias| -%>
   location /<%= location %> {
-    root <%= @mirror_path %><%= location_root %>;
+    alias <%= @mirror_path %><%= location_alias %>;
     autoindex on;
   }
 <% end -%>
