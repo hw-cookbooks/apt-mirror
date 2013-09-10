@@ -9,7 +9,7 @@ server {
   access_log /var/log/nginx/mirror-access.log;
 
 <% @repository_information.each do |location, location_root| -%>
-  location <%= location %> {
+  location <%= location %>/ {
   root <%= @mirror_path %><%= location_root %>;
     autoindex on;
   }

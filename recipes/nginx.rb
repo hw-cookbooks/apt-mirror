@@ -37,3 +37,13 @@ template '/etc/nginx/sites-available/apt-mirrors' do
     :repository_information => repository_information
   )
 end
+
+link '/etc/nginx/sites-enabled/apt-mirrors' do
+  to '/etc/nginx/sites-available/apt-mirrors'
+  link_type :symbolic
+end
+
+service 'nginx' do
+  supports :status => true, :restart => true, :reload => true
+  action :enable
+end
