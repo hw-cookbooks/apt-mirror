@@ -1,4 +1,5 @@
 {
   "id": "mirror5",
-  "source": "deb  http://downloads-distro.mongodb.org/repo/debian-sysvinit dist 10gen"
+  "source": "deb  http://downloads-distro.mongodb.org/repo/debian-sysvinit dist 10gen",
+  "fqdn": "downloads-distro.mongodb.org"
 }

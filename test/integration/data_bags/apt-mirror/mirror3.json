@@ -1,4 +1,5 @@
 {
   "id": "mirror3",
-  "source": "deb  http://repos.sensuapp.org/apt sensu main"
+  "source": "deb  http://repos.sensuapp.org/apt sensu main",
+  "fqdn": "repos.sensuapp.org"
 }
