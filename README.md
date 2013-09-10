@@ -1,30 +1,38 @@
 Description
 ===========
 
-This cookbook installs and configures apt-mirror. This will automate the creation of a
-mirrored repository of one or more apt repositories.
+This cookbook installs and configures apt-mirror. This will automate the creation of
+repository mirrors of Ubuntu packages and one or more APT repositories.
 
 Requirements
 ------------
 
+* Ubuntu 10.04 / Ubuntu 12.04
+* Data Bag named apt-mirror
+```json
+{
+  "id": "sensu",
+  "source": "deb  http://repos.sensuapp.org/apt sensu main"
+}
+```
+
 Attributes
 ----------
+
+*  node['apt-mirror']['base_path'] - Base path for mirror files.
+*  node['apt-mirror']['nodearch'] - To specify which platform arch to mirror. Default is amd64.
+*  node['apt-mirror']['run_postmirror'] - 
+*  node['apt-mirror']['nthreads'] - Set number of threads to use for downloading packages.
+*  node['apt-mirror']['_tilde'] - 
+*  node['apt-mirror']['cron']['active'] - Have Chef schedule to run in cron.
+*  node['apt-mirror']['cron']['minute'] - Minute
+*  node['apt-mirror']['cron']['hour'] - Hour
+*  node['apt-mirror']['cron']['day'] - Day.
+*  node['apt-mirror']['cron']['weekday'] - Weekday. Default is everyday.
 
 Usage
 -----
 Include `recipe[apt-mirror]` in the run_list.
-
-Contributing
-------------
-TODO: (optional) If this is a public cookbook, detail the process for contributing. If this is a private cookbook, remove this section.
-
-e.g.
-1. Fork the repository on Github
-2. Create a named feature branch (like `add_component_x`)
-3. Write you change
-4. Write tests for your change (if applicable)
-5. Run the tests, ensuring they all pass
-6. Submit a Pull Request using Github
 
 Repository
 ----------
