@@ -2,13 +2,14 @@ Description
 ===========
 
 This cookbook installs and configures apt-mirror. This will automate the creation of
-repository mirrors of Ubuntu packages and one or more APT repositories.
+repository mirrors for Ubuntu and for additional APT repositories.
 
 Requirements
 ------------
 
 * Ubuntu 10.04 / Ubuntu 12.04
 * Data Bag named apt-mirror
+
 ```json
 {
   "id": "sensu",
