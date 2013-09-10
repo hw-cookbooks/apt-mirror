@@ -8,9 +8,14 @@ server {
   gzip off;
   access_log /var/log/nginx/mirror-access.log;
 
+  location /ubuntu {
+    root <%= @mirror_path %>archive.ubuntu.com;
+    autoindex on;
+  }
+
 <% @repository_information.each do |location, location_root| -%>
-  location <%= location %>/ {
-  root <%= @mirror_path %><%= location_root %>;
+  location /<%= location %> {
+    root <%= @mirror_path %><%= location_root %>;
     autoindex on;
   }
 <% end -%>
