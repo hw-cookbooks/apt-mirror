@@ -1,0 +1,4 @@
+{
+  "id": "mirror4",
+  "source": "deb  https://swsp-ruby-193p429.s3.amazonaws.com/ precise main"
+}
