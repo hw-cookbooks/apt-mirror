@@ -7,7 +7,7 @@ repository mirrors for Ubuntu and for additional APT repositories.
 Requirements
 ------------
 
-* Ubuntu 10.04 / Ubuntu 12.04
+* Ubuntu 10.04 / Ubuntu 12.04 / Ubuntu 14.04
 * Data Bag named apt-mirror
 
 ```json
