@@ -1,22 +1,13 @@
 Description
 ===========
 
-This cookbook installs and configures apt-mirror. This will automate the creation of
+Chef cookbook to install and configure apt-mirror. This will automate the creation of
 repository mirrors for Ubuntu and for additional APT repositories.
 
 Requirements
 ------------
 
-* Ubuntu 10.04 / Ubuntu 12.04 / Ubuntu 14.04
-* Data Bag named apt-mirror
-
-```json
-{
-  "id": "sensu",
-  "source": "deb  http://repos.sensuapp.org/apt sensu main",
-  "fqdn": "repos.sensuapp.org"
-}
-```
+* Tested on Ubuntu 14.04
 
 Attributes
 ----------
@@ -32,6 +23,8 @@ Attributes
 *  node['apt-mirror']['cron']['day'] - Day.
 *  node['apt-mirror']['cron']['weekday'] - Weekday. Default is everyday.
 *  node['apt-mirror']['nginx']['port'] - Set port for nginx to run.
+*  node['apt-mirror']['repository_locations'] - List of repository locations to set in mirror.list
+*  node['apt-mirror']['clean_locations'] - List of clean locations to set in mirror.list
 
 Usage
 -----
@@ -41,9 +34,9 @@ Include `recipe[apt-mirror::nginx]` in the run_list to include a web server fron
 Repository
 ----------
 
-https://github.com/hw-cookbooks/apt-mirror
+https://github.com/rich-murray/apt-mirror.git
 
 License and Authors
 -------------------
 
-Author:: Aaron Baer (<aaron@hw-ops.com>)
+Author:: Richard Murray (<richard.murray@gmail.com>)
