@@ -8,3 +8,18 @@ default['apt-mirror']['cron']['minute']     = 0
 default['apt-mirror']['cron']['hour']       = 5
 default['apt-mirror']['cron']['day']        = '*'
 default['apt-mirror']['cron']['weekday']    = '*'
+default['apt-mirror']['repository_locations'] = [
+    'deb http://gb.archive.ubuntu.com/ubuntu trusty main restricted universe multiverse',
+    'deb http://gb.archive.ubuntu.com/ubuntu trusty-security main restricted universe multiverse',
+    'deb http://gb.archive.ubuntu.com/ubuntu trusty-updates main restricted universe multiverse',    
+    'deb-src http://gb.archive.ubuntu.com/ubuntu trusty main restricted universe multiverse',
+    'deb-src http://gb.archive.ubuntu.com/ubuntu trusty-security main restricted universe multiverse',
+    'deb-src http://gb.archive.ubuntu.com/ubuntu trusty-updates main restricted universe multiverse' ]                
+
+default['apt-mirror']['clean_locations'] = [
+    'http://gb.archive.ubuntu.com/ubuntu']
+    
+#deb http://gb.archive.ubuntu.com/ubuntu trusty-proposed main restricted universe multiverse
+#deb http://gb.archive.ubuntu.com/ubuntu trusty-backports main restricted universe multiverse
+#deb-src http://gb.archive.ubuntu.com/ubuntu trusty-proposed main restricted universe multiverse
+#deb-src http://gb.archive.ubuntu.com/ubuntu trusty-backports main restricted universe multiverse

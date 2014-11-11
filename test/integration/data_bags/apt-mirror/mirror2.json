@@ -1,5 +1,0 @@
-{
-  "id": "mirror2",
-  "source": "deb  http://repo.percona.com/apt precise main",
-  "fqdn": "repo.percona.com"
-}

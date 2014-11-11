@@ -1,11 +1,7 @@
-{
-  "sha": "72f348f5a2c446733a2da44b08113800b63b54aa",
-  "sources": {
-    "apt-mirror": {
-      "path": "."
-    },
-    "apt": {
-      "locked_version": "2.1.1"
-    }
-  }
-}
+DEPENDENCIES
+  apt-mirror
+    path: .
+    metadata: true
+
+GRAPH
+  apt-mirror (0.1.2)

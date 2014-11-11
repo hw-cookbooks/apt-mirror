@@ -20,3 +20,8 @@ set _tilde        <%= @_tilde %>
 <% @repository_locations.each do |repo| -%>
 <%= repo %>
 <% end -%>
+
+# Cleaning section
+<% @clean_locations.each do |repo| -%>
+clean <%= repo %>
+<% end -%>
