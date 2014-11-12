@@ -2,8 +2,6 @@
 # Cookbook Name:: apt-mirror
 # Recipe:: default
 #
-# Copyright 2013, Heavy Water Operations
-#
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -28,10 +26,6 @@ directory node['apt-mirror']['base_path'] do
   recursive true
 end
 
-repository_locations = data_bag('apt-mirror').map do |mirror|
-  data_bag_item('apt-mirror', mirror)["source"]
-end
-
 template '/etc/apt/mirror.list' do
   source 'mirror.erb'
   mode    '0644'
@@ -43,7 +37,8 @@ template '/etc/apt/mirror.list' do
     :run_postmirror => node['apt-mirror']['run_postmirror'],
     :nthreads => node['apt-mirror']['nthreads'],
     :_tilde => node['apt-mirror']['_tilde'],
-    :repository_locations => repository_locations
+    :repository_locations => node['apt-mirror']['repository_locations'],
+    :clean_locations => node['apt-mirror']['clean_locations'],
   )
 end
 
