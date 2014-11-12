@@ -7,7 +7,11 @@ repository mirrors for Ubuntu and for additional APT repositories.
 Requirements
 ------------
 
-* Tested on Ubuntu 14.04
+* Ubuntu 14.04
+* Ubuntu 12.04
+* Ubuntu 10.04
+
+Note: Default repository locations are setup for **Ubuntu 14.04**
 
 Attributes
 ----------
@@ -35,7 +39,7 @@ Include `recipe[apt-mirror::nginx]` in the run_list to include a web server fron
 Repository
 ----------
 
-https://github.com/rich-murray/apt-mirror.git
+https://github.com/hw-cookbooks/apt-mirror
 
 License and Authors
 -------------------
@@ -43,4 +47,3 @@ License and Authors
 Author:: Aaron Baer (aaron@hw-ops.com)
 Author:: Richard Murray (richard.murray@gmail.com)
 Author:: Graham Weldon (graham.weldon@mail.rakuten.com)
-
