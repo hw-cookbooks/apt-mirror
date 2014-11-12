@@ -12,7 +12,8 @@ platforms:
 suites:
 - name: default
   run_list:
-      - recipe[apt-mirror]      
+      - recipe[apt-mirror]
+      - recipe[apt-mirror::nginx]
   attributes: 
     apt-mirror:
       base_path: "/ci/apt-mirror"

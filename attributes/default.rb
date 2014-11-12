@@ -19,7 +19,4 @@ default['apt-mirror']['repository_locations'] = [
 default['apt-mirror']['clean_locations'] = [
     'http://gb.archive.ubuntu.com/ubuntu']
     
-#deb http://gb.archive.ubuntu.com/ubuntu trusty-proposed main restricted universe multiverse
-#deb http://gb.archive.ubuntu.com/ubuntu trusty-backports main restricted universe multiverse
-#deb-src http://gb.archive.ubuntu.com/ubuntu trusty-proposed main restricted universe multiverse
-#deb-src http://gb.archive.ubuntu.com/ubuntu trusty-backports main restricted universe multiverse
+default['apt-mirror']['nginx']['aliases'] = {'trusty' => 'gb.archive.ubuntu.com'}

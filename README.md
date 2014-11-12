@@ -23,6 +23,7 @@ Attributes
 *  node['apt-mirror']['cron']['day'] - Day.
 *  node['apt-mirror']['cron']['weekday'] - Weekday. Default is everyday.
 *  node['apt-mirror']['nginx']['port'] - Set port for nginx to run.
+*  node['apt-mirror']['nginx']['aliases'] - The nginx alias locations
 *  node['apt-mirror']['repository_locations'] - List of repository locations to set in mirror.list
 *  node['apt-mirror']['clean_locations'] - List of clean locations to set in mirror.list
 

@@ -16,12 +16,7 @@
 #
 
 include_recipe 'apt-mirror'
-package 'nginx'
-
-repository_information = data_bag('apt-mirror').map do |mirror|
-  repository = data_bag_item('apt-mirror', mirror)
-  [repository['id'], repository['fqdn']]
-end
+include_recipe 'nginx'
 
 template '/etc/nginx/sites-available/apt-mirrors' do
   source  'nginx-mirrors.erb'
@@ -30,18 +25,11 @@ template '/etc/nginx/sites-available/apt-mirrors' do
   group   'root'
   variables(
     :port => node['apt-mirror']['nginx']['port'],
-    :server_name => node['fqdn'],
+    :server_name => node['fqdn'], 
     :mirror_path => File.join(node['apt-mirror']['base_path'], "/mirror/"),
-    :repository_information => repository_information
+    :nginx_aliases => node['apt-mirror']['nginx']['aliases']
   )
 end
 
-link '/etc/nginx/sites-enabled/apt-mirrors' do
-  to '/etc/nginx/sites-available/apt-mirrors'
-  link_type :symbolic
-end
-
-service 'nginx' do
-  supports :status => true, :restart => true, :reload => true
-  action :enable
-end
+#enable the apt-mirror site
+nginx_site "apt-mirrors"
