@@ -12,20 +12,20 @@ Requirements
 Attributes
 ----------
 
-*  node['apt-mirror']['base_path'] - Base path for mirror files.
-*  node['apt-mirror']['nodearch'] - To specify which platform arch to mirror. Default is amd64.
-*  node['apt-mirror']['run_postmirror'] - 
-*  node['apt-mirror']['nthreads'] - Set number of threads to use for downloading packages.
-*  node['apt-mirror']['_tilde'] - 
-*  node['apt-mirror']['cron']['active'] - Have Chef schedule to run in cron.
-*  node['apt-mirror']['cron']['minute'] - Minute
-*  node['apt-mirror']['cron']['hour'] - Hour
-*  node['apt-mirror']['cron']['day'] - Day.
-*  node['apt-mirror']['cron']['weekday'] - Weekday. Default is everyday.
-*  node['apt-mirror']['nginx']['port'] - Set port for nginx to run.
-*  node['apt-mirror']['nginx']['aliases'] - The nginx alias locations
-*  node['apt-mirror']['repository_locations'] - List of repository locations to set in mirror.list
-*  node['apt-mirror']['clean_locations'] - List of clean locations to set in mirror.list
+* node['apt-mirror']['base_path'] - Base path for mirror files. Default `/var/spool/apt-mirror`.
+* node['apt-mirror']['defaultarch'] - To specify which platform arch to mirror. Default `amd64`.
+* node['apt-mirror']['run_postmirror'] - Execute the postmirror script. Default `0`
+* node['apt-mirror']['nthreads'] - Set number of threads to use for downloading packages. Default `20`.
+* node['apt-mirror']['_tilde'] - 
+* node['apt-mirror']['cron']['active'] - Have Chef schedule to run in cron. Default `false`.
+* node['apt-mirror']['cron']['minute'] - Minute
+* node['apt-mirror']['cron']['hour'] - Hour
+* node['apt-mirror']['cron']['day'] - Day.
+* node['apt-mirror']['cron']['weekday'] - Weekday. Default is everyday.
+* node['apt-mirror']['nginx']['port'] - Set port for nginx to run. Default `80`.
+* node['apt-mirror']['nginx']['aliases'] - The nginx alias locations
+* node['apt-mirror']['repository_locations'] - List of repository locations to set in mirror.list
+* node['apt-mirror']['clean_locations'] - List of clean locations to set in mirror.list
 
 Usage
 -----
@@ -40,4 +40,7 @@ https://github.com/rich-murray/apt-mirror.git
 License and Authors
 -------------------
 
-Author:: Richard Murray (<richard.murray@gmail.com>)
+Author:: Aaron Baer (aaron@hw-ops.com)
+Author:: Richard Murray (richard.murray@gmail.com)
+Author:: Graham Weldon (graham.weldon@mail.rakuten.com)
+
