@@ -26,15 +26,15 @@ repository_information = data_bag('apt-mirror').map do |mirror|
 end
 
 template '/etc/nginx/sites-available/apt-mirrors' do
-  source  'nginx-mirrors.erb'
-  mode    '0644'
-  owner   'root'
-  group   'root'
+  source 'nginx-mirrors.erb'
+  mode '0644'
+  owner 'root'
+  group 'root'
   variables(
-    :port => node['apt-mirror']['nginx']['port'],
-    :server_name => node['fqdn'],
-    :mirror_path => File.join(node['apt-mirror']['base_path'], "/mirror/"),
-    :repository_information => repository_information
+    port: node['apt-mirror']['nginx']['port'],
+    server_name: node['fqdn'],
+    mirror_path: File.join(node['apt-mirror']['base_path'], '/mirror/'),
+    repository_information: repository_information
   )
 end
 
@@ -44,6 +44,6 @@ link '/etc/nginx/sites-enabled/apt-mirrors' do
 end
 
 service 'nginx' do
-  supports :status => true, :restart => true, :reload => true
+  supports status: true, restart: true, reload: true
   action :enable
 end
