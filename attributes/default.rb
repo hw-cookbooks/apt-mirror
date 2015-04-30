@@ -8,3 +8,4 @@ default['apt-mirror']['cron']['minute']     = 0
 default['apt-mirror']['cron']['hour']       = 5
 default['apt-mirror']['cron']['day']        = '*'
 default['apt-mirror']['cron']['weekday']    = '*'
+default['apt-mirror']['data_bags']          = []
