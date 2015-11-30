@@ -1,5 +1,5 @@
-Description
-===========
+# apt-mirror Cookbook
+[![Cookbook Version](https://img.shields.io/cookbook/v/apt-mirror.svg)](https://supermarket.chef.io/cookbooks/apt-mirror)
 
 This cookbook installs and configures apt-mirror. This will automate the creation of
 repository mirrors for Ubuntu and for additional APT repositories.
